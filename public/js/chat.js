@@ -394,48 +394,48 @@ function windowResized() {
 }
 
 // Fullscreen
-// function openFullscreen() {
-//   try {
-//     // var elem = document.getElementById("remote-video");
-//     var elem = document.getElementById("body");
-//     if (!isFullscreen) {
-//       VideoChat.remoteVideo.classList.add("fullscreen");
-//       isFullscreen = true;
-//       if (elem.requestFullscreen) {
-//         elem.requestFullscreen();
-//       } else if (elem.mozRequestFullScreen) {
-//         /* Firefox */
-//         elem.mozRequestFullScreen();
-//       } else if (elem.webkitRequestFullscreen) {
-//         /* Chrome, Safari and Opera */
-//
-//         elem.webkitRequestFullscreen();
-//         setTimeout(windowResized, 1000);
-//       } else if (elem.msRequestFullscreen) {
-//         /* IE/Edge */
-//         elem.msRequestFullscreen();
-//       }
-//     } else {
-//       isFullscreen = false;
-//       VideoChat.remoteVideo.classList.remove("fullscreen");
-//       if (document.exitFullscreen) {
-//         document.exitFullscreen();
-//       } else if (document.mozCancelFullScreen) {
-//         /* Firefox */
-//         document.mozCancelFullScreen();
-//       } else if (document.webkitExitFullscreen) {
-//         /* Chrome, Safari and Opera */
-//         document.webkitExitFullscreen();
-//       } else if (document.msExitFullscreen) {
-//         /* IE/Edge */
-//         document.msExitFullscreen();
-//       }
-//     }
-//   } catch (e) {
-//     logIt(e);
-//   }
-//   setTimeout(windowResized, 1000);
-// }
+function openFullscreen() {
+  try {
+    // var elem = document.getElementById("remote-video");
+    var elem = document.getElementById("body");
+    if (!isFullscreen) {
+      VideoChat.remoteVideo.classList.add("fullscreen");
+      isFullscreen = true;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+        /* Chrome, Safari and Opera */
+
+        elem.webkitRequestFullscreen();
+        setTimeout(windowResized, 1000);
+      } else if (elem.msRequestFullscreen) {
+        /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    } else {
+      isFullscreen = false;
+      VideoChat.remoteVideo.classList.remove("fullscreen");
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        /* Chrome, Safari and Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        /* IE/Edge */
+        document.msExitFullscreen();
+      }
+    }
+  } catch (e) {
+    logIt(e);
+  }
+  setTimeout(windowResized, 1000);
+}
 // End Fullscreen
 
 // Mute microphone
