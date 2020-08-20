@@ -6,7 +6,7 @@ const browserName = getBrowserName();
 const url = window.location.href;
 const roomHash = url.substring(url.lastIndexOf("/") + 1).toLowerCase();
 var mode = "camera";
-// var isFullscreen = false;
+var isFullscreen = false;
 var sendingCaptions = false;
 var receivingCaptions = false;
 const isWebRTCSupported =
@@ -899,7 +899,7 @@ function startUp() {
   var timedelay = 1;
   function delayCheck() {
     if (timedelay === 5) {
-      // $(".multi-button").fadeOut();
+      $(".multi-button").fadeOut();
       $("#header").fadeOut();
       timedelay = 1;
     }

@@ -31,23 +31,6 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(public, "landing.html"));
 });
 
-app.get("/newcall", function (req, res) {
-  res.sendFile(path.join(public, "newcall.html"));
-});
-
-app.get("/join/", function (req, res) {
-  res.redirect("/");
-});
-
-app.get("/join/*", function (req, res) {
-  if (Object.keys(req.query).length > 0) {
-    logIt("redirect:" + req.url + " to " + url.parse(req.url).pathname);
-    res.redirect(url.parse(req.url).pathname);
-  } else {
-    res.sendFile(path.join(public, "chat.html"));
-  }
-});
-
 app.get("/notsupported", function (req, res) {
   res.sendFile(path.join(public, "notsupported.html"));
 });
@@ -56,8 +39,18 @@ app.get("/notsupportedios", function (req, res) {
   res.sendFile(path.join(public, "notsupportedios.html"));
 });
 
+
 // Serve static files in the public directory
 app.use(express.static("public"));
+
+app.get("/*", function (req, res) {
+    if (Object.keys(req.query).length > 0) {
+    logIt("redirect:" + req.url + " to " + url.parse(req.url).pathname);
+    res.redirect(url.parse(req.url).pathname);
+    } else {
+    res.sendFile(path.join(public, "chat.html"));
+    }
+});
 
 // Simple logging function to add room name
 function logIt(msg, room) {

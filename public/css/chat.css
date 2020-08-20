@@ -173,10 +173,8 @@ button:hover {
 
 .multi-button {
   position: absolute;
-  left: calc(7.5vw - 40px);
-  top: 50%;
-  -ms-transform: translate(0%, -50%);
-  transform: translate(0%, -50%);
+  left: 15px;
+  top: 100px;
   z-index: 999;
   border-radius: 10px;
   background: #16171a;
